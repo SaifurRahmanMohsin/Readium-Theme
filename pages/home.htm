@@ -1,0 +1,17 @@
+title = "Home"
+url = "/"
+layout = "default"
+description = "Welcome to my blog"
+hidden = "0"
+==
+<div class="teaserimage">
+    <div class="teaserimage-image" {% if this.theme.use_blog_cover %}style="background-image: url({{ 'assets/images/cover.jpg'|theme }})"{% endif %}>
+        Teaser Image
+    </div>
+</div>
+<header class="blog-header">
+
+    {% partial 'header' %}
+    {% partial 'nav' %}
+    
+</header>

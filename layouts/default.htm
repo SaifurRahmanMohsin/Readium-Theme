@@ -1,0 +1,50 @@
+description = "Default Layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>{{ this.theme.blog_name }} | {{ this.page.title }} </title>
+        <meta name="author" content="October CMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{ this.page.meta_description }}" />
+        <meta name="keywords" content="{{ this.page.meta_keywords }}" />
+    
+        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}" />
+        {% styles %}
+        <link href="{{ [
+            'assets/css/main.css',
+            'assets/css/print.css'
+        ]|theme }}" rel="stylesheet">
+        <link rel="stylesheet" href="//www.google.com/fonts#UsePlace:use/Collection:Open+Sans:400italic,700italic,400,700">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+<head>
+
+    <title>{{ this.theme.blog_name }}</title>
+    
+</head>
+<body>
+    <a href="{{ '/'|app }}" class="logo-readium"><span class="logo" style="background-image: url( {{ 'assets/images/logo.png'|theme }} )"></span></a>
+    {% page %}
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ 'assets/js/jquery.js'|theme }}"><\/script>')</script>
+    <script src="{{ [
+        'assets/js/jquery.fitvids.js',
+        'assets/js/index.js',
+        'assets/js/readingTime.min.js',
+        'assets/js/highlight.pack.js'
+    ]|theme }}"></script>
+    
+    {% framework extras %}
+    {% scripts %}
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

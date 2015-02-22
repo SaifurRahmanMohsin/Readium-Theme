@@ -1,0 +1,5 @@
+description = "Blog Header"
+==
+{% if this.theme.use_blog_logo %}<a class="blog-logo" href="{{ '/'|app}}" style="background-image: url({{ 'assets/images/logo.png'|theme}})">{{ this.theme.blog_name }}</a>{% endif %}
+<h1 class="blog-title">{{ this.page.title}}</h1>
+<h2 class="blog-description">{{ this.page.description}}</h2>

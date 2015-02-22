@@ -14,3 +14,13 @@ form:
       label: Author name
       comment: The name of the blog author
       default: Saifur Rahman Mohsin
+
+    use_blog_cover:
+      label: Use Blog Cover
+      commentAbove: Uses the cover.jpg file in the main page
+      type: switch
+
+    use_blog_logo:
+      label: Use Blog Logo
+      commentAbove: Uses the logo in main page
+      type: switch

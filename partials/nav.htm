@@ -1,0 +1,22 @@
+description = "Navigation Menu"
+==
+{% set
+    links = {
+	    'home':        ['home', 'Home'],
+		'project':     ['project', 'Projects'],
+		'contact':     ['contact', 'Contact'],
+    }
+%}
+
+{% macro render_menu(links) %}
+    {% for code, link in links %}
+<a href="{{ link[0]|page }}">{{ link.name ?: link[1] }}</a>{%if not loop.last%}&nbsp;&nbsp;·&nbsp;&nbsp;{% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% import _self as nav %}
+
+<nav class="custom-links" role="navigation">
+{% partial 'social' %}
+{{ nav.render_menu(links) }}
+</nav><!--/nav-->

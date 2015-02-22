@@ -1,0 +1,21 @@
+description = "Social Links"
+==
+{% set
+    links = {
+	    'facebook':       ['Facebook', 'http://fb.com/timetraveller1992'],
+		'google-plus':     ['Google+', 'http://google.com/+SaifurRahmanMohsin'],
+		'twitter':        ['Twitter', 'http://twitter.com/SaifurMohsin'],
+		'github':         ['Github', 'http://github.com/SaifurRahmanMohsin'],
+		'linkedin':       ['LinkedIn', 'http://http://in.linkedin.com/in/saifurrahmanmohsin/'],
+    }
+%}
+
+{% macro render_menu(links) %}
+    {% for code, link in links %}
+<a href="{{ link.name ?: link[1] }}" target="_blank" title="{{ link.name ?: link[0] }}"><i class="fa fa-{{ code }}"></i></a>&nbsp;&nbsp;
+    {% endfor %}
+{% endmacro %}
+
+{% import _self as social %}
+
+{{ social.render_menu(links) }}·&nbsp;&nbsp;
