@@ -1,0 +1,67 @@
+//
+// Pages
+//
+// Styles for Home page
+//
+
+.index-headline {
+    .featured {
+        display: none;
+    }
+    border-top: 1px solid #dededc;
+    margin: 0;
+    padding: 16px 0;
+    span {
+        color: #b3b3b1;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
+ul.pagination {
+    list-style-type: none;
+    text-align: center;
+    padding: 48px 0 0;
+    font-size: 12px;
+    li {
+        display: inline;
+        a {
+            color: #999;
+        }
+    }
+    li:first-child::before {
+        padding: 0 5px;
+        content: "Page ";
+    }
+    li:first-child::after {
+        padding: 0 5px;
+        content: " of ";
+    }
+    li:last-child {
+        a {
+            visibility: hidden;
+        }
+        a::before {
+            visibility: visible;
+            color: #999;
+            content: "Older";
+        }
+        a:hover::before {
+            visibility: visible;
+            color: #000;
+            content: "Older";
+        }
+    }
+    li:last-child::before {
+        padding: 0 7px;
+        content: ".";
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #333333;
+    }
+}
