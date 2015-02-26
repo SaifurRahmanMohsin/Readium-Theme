@@ -3,10 +3,6 @@ url = "/blog/post/:slug"
 layout = "default"
 description = "The individual post page"
 hidden = "0"
-
-[blogPost]
-slug = "{{ :slug }}"
-categoryPage = "blog/category"
 ==
 <?php
 function onInit()
@@ -27,7 +23,7 @@ function onEnd()
             <span class="post-reading-time"></span> read
         </div>
         <a name="topofpage"></a>
-        {% component 'blogPost' %}
+        <!-- REPLACE THIS LINE WITH BLOG POST COMPONENT OF BLOG PLUGIN -->
         
         <footer class="post-footer">
             <section class="share">

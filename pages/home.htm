@@ -3,19 +3,10 @@ url = "/"
 layout = "default"
 description = "Welcome to my blog"
 hidden = "0"
-
-[blogPosts]
-pageNumber = "{{ :page }}"
-categoryFilter = "featured"
-postsPerPage = "10"
-noPostsMessage = "No posts found"
-sortOrder = "published_at desc"
-categoryPage = "blog/post"
-postPage = "blog/post"
 ==
 <h5 class="index-headline featured"><span>Featured</span></h5>
 <div>
-    <!-- REPLACE THIS LINE WITH POST LIST COMPONENT OF BLOG PLUGIN WITH featured CATEGORY FILTER-->{% component 'blogPosts' %}
+    <!-- REPLACE THIS LINE WITH POST LIST COMPONENT OF BLOG PLUGIN WITH featured CATEGORY FILTER-->
 </div>
 
 <h5 class="index-headline normal"><span>Regular</span></h5>
