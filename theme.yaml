@@ -1,6 +1,7 @@
 name: Readium
-description: OctoberCMS port to the Readium Theme for Ghost
-author: Saifur Rahman Mohsin, Talha Zekeriya Durmuş
+code: readium
+description: Simple blog theme for OctoberCMS based on Readium theme for Ghost
+author: Saifur Rahman Mohsin
 homepage: 'http://github.com/SaifurRahmanMohsin/Readium-Theme'
 
 form:
@@ -15,12 +16,17 @@ form:
       comment: The name of the blog author
       default: Saifur Rahman Mohsin
 
+    use_blog_logo:
+      label: Use Blog Logo
+      commentAbove: Uses the logo in main page
+      type: switch
+
     use_blog_cover:
       label: Use Blog Cover
       commentAbove: Uses the cover.jpg file in the main page
       type: switch
 
-    use_blog_logo:
-      label: Use Blog Logo
-      commentAbove: Uses the logo in main page
+    use_profile_photo:
+      label: Use Profile Picture as Logo
+      commentAbove: Uses the backend primary administrator user photo as logo
       type: switch

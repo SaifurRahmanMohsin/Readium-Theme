@@ -1,0 +1,34 @@
+title = "Projects"
+url = "/projects"
+layout = "default"
+hidden = "0"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "themes"
+postsPerPage = "10"
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/post"
+postPage = "blog/post"
+
+[blogPosts blogPosts2]
+pageNumber = "{{ :page }}"
+categoryFilter = "plugins"
+postsPerPage = "10"
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/post"
+postPage = "blog/post"
+==
+<h5 class="index-headline featured"><span>Themes</span></h5>
+    <!-- REPLACE THIS LINE WITH POST LIST COMPONENT OF BLOG PLUGIN WITH themes CATEGORY FILTER-->{% component 'blogPosts' %}
+<div class="row">
+    
+</div>
+
+<h5 class="index-headline normal"><span>Plugins</span></h5>
+
+<div class="row">
+    <!-- REPLACE THIS LINE WITH POST LIST COMPONENT OF BLOG PLUGIN WITH plugins CATEGORY FILTER-->{% component 'blogPosts2' %}
+</div>

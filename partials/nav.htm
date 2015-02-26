@@ -3,14 +3,14 @@ description = "Navigation Menu"
 {% set
     links = {
 	    'home':        ['home', 'Home'],
-		'project':     ['project', 'Projects'],
+		'projects':     ['projects', 'Projects'],
 		'contact':     ['contact', 'Contact'],
     }
 %}
 
 {% macro render_menu(links) %}
     {% for code, link in links %}
-<a href="{{ link[0]|page }}">{{ link.name ?: link[1] }}</a>{%if not loop.last%}&nbsp;&nbsp;·&nbsp;&nbsp;{% endif %}
+<a href="{{ link[0]|page }}">{{ link.name ?: link[1] }}</a>{%if not loop.last%}  ·  {% endif %}
     {% endfor %}
 {% endmacro %}
 

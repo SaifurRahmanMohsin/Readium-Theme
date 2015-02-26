@@ -12,10 +12,10 @@ description = "Social Links"
 
 {% macro render_menu(links) %}
     {% for code, link in links %}
-<a href="{{ link.name ?: link[1] }}" target="_blank" title="{{ link.name ?: link[0] }}"><i class="fa fa-{{ code }}"></i></a>&nbsp;&nbsp;
+<a href="{{ link.name ?: link[1] }}" target="_blank" title="{{ link.name ?: link[0] }}"><i class="icon icon-{{ code }}"></i></a>  
     {% endfor %}
 {% endmacro %}
 
 {% import _self as social %}
 
-{{ social.render_menu(links) }}·&nbsp;&nbsp;
+{{ social.render_menu(links) }}·  

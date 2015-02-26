@@ -1,5 +1,17 @@
 description = "Default Layout"
 ==
+<?php
+function onInit()
+{
+    $user = \BackendAuth::getUser();
+    $filepath = '';
+    if ( $user && $user -> avatar ) {
+            $filepath = $user -> avatar -> getPath();
+    }
+    $this['profilePhoto'] = $filepath;
+}
+?>
+==
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,12 +30,16 @@ description = "Default Layout"
     
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}" />
         {% styles %}
+        
         <link href="{{ [
-            'assets/css/main.css',
+            'assets/css/normalize.css',
+            'assets/css/theme.css',
             'assets/css/print.css'
         ]|theme }}" rel="stylesheet">
-        <link rel="stylesheet" href="//www.google.com/fonts#UsePlace:use/Collection:Open+Sans:400italic,700italic,400,700">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+        
+        <!-- REPLACE THIS LINE WITH A FEED COMPONENT OR RSS FEED LINK FROM A SUITABLE RSS FEED PLUGIN-->
     </head>
 <head>
 
@@ -31,20 +47,59 @@ description = "Default Layout"
     
 </head>
 <body>
-    <a href="{{ '/'|app }}" class="logo-readium"><span class="logo" style="background-image: url( {{ 'assets/images/logo.png'|theme }} )"></span></a>
+    <a href="{{ '/'|app }}" class="logo-readium"><span class="logo" style="background-image: url({% if this.theme.use_profile_photo %}{{ profilePhoto }}{% else %}{{ 'assets/images/logo.png'|theme}}{% endif %})"></span></a>
+
+{% if noHeader is null %}
+<div class="teaserimage">
+    <div class="teaserimage-image" {% if this.theme.use_blog_cover %}style="background-image: url({{ 'assets/images/cover.jpg'|theme }})"{% endif %}></div>
+</div>
+<header class="blog-header">
+
+    {% partial 'header' %}
+    {% partial 'nav' %}
+    
+</header>
+{% endif %}
+
+<main class="content" role="main">
     {% page %}
+</main>
+
+    {% partial 'footer' %}
+    
     <!-- Scripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{ 'assets/js/jquery.js'|theme }}"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="{{ 'assets/javascript/jquery.js'|theme }}"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <script src="{{ [
-        'assets/js/jquery.fitvids.js',
-        'assets/js/index.js',
-        'assets/js/readingTime.min.js',
-        'assets/js/highlight.pack.js'
+        'assets/javascript/index.js'
     ]|theme }}"></script>
+
+    <script>
+        (function ($) {
+            "use strict";
+    
+            $(document).ready(function(){
+    
+                var $window = $(window),
+                    $image = $('.teaserimage-image');
+                $window.on('scroll', function() {
+                    var top = $window.scrollTop();
+    
+                    if (top < 0 || top > 1500) { return; }
+                    $image
+                        .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+                        .css('opacity', 1-Math.max(top/700, 0));
+                });
+                $window.trigger('scroll');
+    
+            });
+    
+        }(jQuery));
+    </script>
     
     {% framework extras %}
     {% scripts %}
-    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
