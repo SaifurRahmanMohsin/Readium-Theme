@@ -10,6 +10,46 @@
 
 article {
   padding-top: 50px;
+  .post-meta {
+        font-family: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif;
+        padding-bottom: 20px;
+  }
+  .post-title {
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -0.04em;
+    font-size: 50px;
+    line-height: 1.1;
+    color: #333332;
+    margin-bottom: 16px;
+  }
+  .post-meta-text {
+    color: #b3b3b1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    overflow: hidden;
+    font-family: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    .author-image {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      margin-right: 8px;
+      margin-bottom: -10px;
+      float: left;
+      background-size: cover;
+      border-radius: 100%;
+      text-indent: -9999px;
+    }
+    .author-name {
+      padding-left: 1%;
+      font-size: 16px;
+    }
+  }
   .info {
     color: #b3b3b1;
     letter-spacing: -0.02em;
@@ -21,10 +61,11 @@ article {
     white-space: nowrap;
     text-overflow: ellipsis;
     a {
-      color: rgba(255, 255, 255, 0.75);
+      color: #666;
+      text-decoration: none;
     }
     a:hover{
-      color: white;
+      color: #000;
     }
   }
 }

@@ -1,5 +1,5 @@
 /**
- * Main JS file for Casper behaviours
+ * Main JS file
  */
 
 /*globals jQuery, document */
@@ -7,7 +7,7 @@
     "use strict";
 
     $(document).ready(function(){
-        
+
         // Creates Captions from Alt tags
         $(".post-content img").each(function() {
             // Let's put a caption if there is one
@@ -15,7 +15,7 @@
               $(this).wrap('<figure class="image"></figure>')
               .after('<figcaption>'+$(this).attr("alt")+'</figcaption>');
         });
-        
+
     });
 
 }(jQuery));

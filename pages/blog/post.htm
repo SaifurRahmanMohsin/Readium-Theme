@@ -18,13 +18,22 @@ function onEnd()
 ?>
 ==
 <article class="row">
+    <div class="post-meta">
+        <h1 class="post-title">{{ post.title }}</h1>
+        <div class="post-meta-text">
+            <div class="author-image" style="background-image: url({% if this.theme.use_profile_photo %}{{ profilePhoto }}{% else %}{{ 'assets/images/logo.png'|theme}}{% endif %})">Blog Logo</div>
+            <span class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by {{ this.theme.author_name }}</span>
+        </div>
+        <center><a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a></center>
+    </div>
     <section class="post-content">
         <div class="post-reading">
             <span class="post-reading-time"></span> read
         </div>
         <a name="topofpage"></a>
         <!-- REPLACE THIS LINE WITH BLOG POST COMPONENT OF BLOG PLUGIN -->
-        
+        <!-- REPLACE THIS LINE WITH DISQUS COMPONENT OF DISQUS PLUGIN -->
+
         <footer class="post-footer">
             <section class="share">
                 {% partial 'social' %}
